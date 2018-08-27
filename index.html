@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html ng-app="imobil">
+<head>
+	<title>Site</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link rel="stylesheet" type="text/css" href="css/mobile.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<script type="text/javascript" src="lib/angular.min.js"></script>
+
+</head>
+<body ng-controller="ImovelController">
+
+	<header>
+			<div id="menu-mobile-mask" class="visible-xs">
+				
+			</div>
+
+			<div id="menu-mobile" class="visible-xs">
+				<ul>
+					<li><a href="#">Login</a></li>
+					<li><a href="#">Cadastrar Imóvel</a></li>
+					<li><a href="#">Vender</a></li>
+					<li><a href="#">Alugar</a></li>
+				</ul>	
+			</div>	
+
+		<div class="row menu-bar">
+			<div class="container menu-bar">
+					<button class="btn btn-menu visible-xs"><i class="fa fa-bars"></i></button>
+					<div class="container-search pull-right">
+						<input 
+							type="text"
+							name="search" 
+							placeholder="Pesquisar..."
+							ng-model="imovel">
+						<button class="btn btn-search"><i class="fa fa-search"></i></button>
+					</div>
+			</div>
+		</div>
+	</header>
+
+	<section>
+
+		<div class="container wrapper">
+		
+			<nav class="col col-md-4 menu-lat">
+				<strong>Filtros</strong>
+				<ul>
+					<li ng-click="orderByMe('preco')">Maior Preço</li>
+					<li ng-click="orderByMe('titulo')">Local</li>
+					<li ng-click="orderByMe('proprietario')">Dono</li>
+				</ul>
+			</nav>
+
+		<!--usando controllers para exibir conteudo-->
+			<div class="col-xs-12 col col-md-6 bloco-central">
+				<div class="houses" ng-repeat="house in houses | filter: imovel | orderBy:myOrderBy">
+					<h2>{{house.titulo}}</h2>
+					<img ng-src="{{house.img}}">
+
+					<blockquote class="blockquote-reverse">
+						<h3>{{house.preco | currency}}</h3>
+					</blockquote>
+
+					<button class="btn btn-success btn-comprar"><i class="fa fa-shopping-cart"></i></button>
+
+					<div id="panel-opcoes-house" ng-init="tab = 1" ng-controller="PanelController as panel">
+						<ul>
+							<li ng-class="{ active: panel.isSelected(1)}">
+								<a href="" ng-click="panel.selectTab(1)">Descricao</a>
+							</li>
+							<li ng-class="{ active: panel.isSelected(2)}">
+								<a href="" ng-click="panel.selectTab(2)">Contatos</a>
+							</li>
+							<li ng-class="{ active: panel.isSelected(3)}">
+								<a href="" ng-click="panel.selectTab(3)">Avaliações</a>
+							</li>
+						</ul>
+
+						<div class="panel" ng-show="panel.isSelected(1)">
+							<p>{{house.descricao}}</p>
+						</div>
+
+						<div class="panel" ng-show="panel.isSelected(2)">
+							<p>Proprietario: {{house.proprietario}}</p>
+							<p>Telefone: {{house.tel}}</p>
+							<p>E-mail: {{house.email}}</p>
+						</div>
+
+						<div class="panel" ng-show="panel.isSelected(3)">
+							<q>{{house.coment}}</q>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+			<div class="col-md-4 filtro visible-md visible-lg">
+			
+			</div>
+		</div>
+
+	</section>
+
+	<script type="text/javascript" src="modules/module.js"></script>
+	<script type="text/javascript" src="controllers/imoveis-controller.js"></script>
+	<script type="text/javascript" src="controllers/panel-controller.js"></script>
+	<script src="lib/jquery/jquery.min.js"></script>
+	<script type="text/javascript" src="js/efeitos.js"></script>
+
+</body>
+</html>

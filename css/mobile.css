@@ -1,0 +1,238 @@
+@media screen and (max-width: 480px) {
+
+	html, body {
+		margin: 0 auto;
+	}
+	header .menu-bar {
+		background-color: #34495e;	
+		color: #000;
+		height: 60px;
+	}
+
+	header .menu-bar .btn-menu {
+		font-family: Arial;
+		position: relative;
+		top: 11px;
+    	left: 13px;	
+		margin: 6px;
+		background:none;
+		border-radius: 0;
+	    height: 28px;
+		width: 35px;
+	}
+
+	header .menu-bar .btn-menu i {
+	    position: relative;
+	    top: -5px;
+	    left: -7px;
+	    font-size: 20pt;
+	    color: #fff;
+	    z-index: 3
+	}
+	header .container-search {
+		position: relative;
+	    width: 100%;
+		top: -19px;
+		left: 1px;
+	}
+
+	header .menu-bar input {
+		width: 150px;
+	    border: solid 1px white;
+	    position: relative;
+	    left: 171px;
+	    top: 0;
+	    padding: 12px;
+    	border-radius: 5px;
+	    height: 24px;
+	}
+
+	header .menu-bar .btn-search {
+		position: relative;
+	    left: 168px;
+	    top: 0;
+	    height: 24px;
+	    width: 27px;
+	    font-size: 11px;
+	    border-radius: 0;
+	}
+
+	header .menu-bar .btn-search i{
+    font-size: 14pt;
+    position: relative;
+	top: -4px;
+	left: -8px;
+
+	}
+
+	header.open-menu #menu-mobile {
+		position: fixed;
+		background-color: #2980b9;
+		width: 80%;
+		height: 100%;
+		transition: 1s;
+		z-index: 2;
+	}
+
+	header.open-menu #menu-mobile {
+		left: 0;
+	}
+
+	header.open-menu #menu-mobile ul {
+		position: relative;
+		display: block;
+		top: 50px;
+		left: 0;
+		background-color: #fff;
+	}
+
+	header #menu-mobile ul {
+		display: none;
+	}
+
+	header.open-menu #menu-mobile li {
+		position: relative;
+		display: block;
+		list-style: none;
+		margin-top: 10px;
+		text-align: center;
+		left: -20px;
+		padding: 20px 0; 
+	}
+
+	header.open-menu #menu-mobile li a {
+		font-size: 14pt;
+		color: #34495e;
+	}
+
+	header.open-menu #menu-mobile-mask {
+		position: fixed;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, .5);
+		z-index:2;
+	}
+
+	.container {
+		padding: 0;
+	}
+	section .container nav {
+		width: 100%;
+		height: auto;
+		background-color: #ecf0f1	;
+
+	}
+
+	section .container nav ul {
+	    position: relative;
+	    margin: 0;
+	    padding: 0;
+	    left: 18px;
+	}
+	section .container nav ul li{
+		display: inline-block;
+		padding: 10px;
+		margin-right: 20px;
+	}
+
+	section .container nav ul li a{
+		text-decoration: none;
+		font-size: 16px;
+		font-family: Arial;
+		color: #34495e;
+		margin-right: 10px;
+	}
+
+	section .bloco-central {
+		position: relative;
+		background-color: silver;
+		width: 100%;
+		height: auto;
+		z-index: 1;
+	}
+
+	.bloco-central .houses {
+		position: relative;
+	    width: 100%;
+	    height: auto;
+	    padding: 0 5px;
+ 	  	background-color: #fff;
+	}
+
+	blockquote{
+		margin: 0;
+	}
+
+	.houses img {
+		width: 100%;
+	}
+
+	.houses h2 {
+		position: relative;
+		top: 10px;
+ 		font-size: 18pt;
+ 		text-align: center;
+ 		font-family: Arial;
+	}
+
+	.houses p {
+		padding: 8px;
+	}
+
+	.houses .btn-comprar {
+		position: relative;
+	    top: -47px;
+	    left: 5px;
+	    width: 156px;
+		height: 60px;
+		outline: none;
+
+	}	
+
+	.houses .btn-comprar i {
+		font-size: 22pt;
+	}
+
+	#panel-opcoes-house {
+		position: relative;
+    	top: -40px;
+		padding: 1px;
+	}
+
+	#panel-opcoes-house ul {
+	    width: 100%;
+	    height: auto;
+	    list-style: none;
+	    position: relative;
+	    background-color: #e74c3c;
+	    padding: 0;
+	}
+
+	#panel-opcoes-house ul li{
+		display: inline-block;
+		margin-right: 10px;
+		padding: 10px;
+	}
+
+	#panel-opcoes-house ul li a {
+		text-decoration: none;
+		color: #fff;
+	}
+
+
+	#panel-opcoes-house .panel {
+		margin-bottom: 0;
+	}
+
+	.wrapper {
+		position: relative;
+		top: 60px;
+	}
+	.panel p {
+		position: relative;
+	    width: 100%;
+	    text-align: justify;
+	}
+}	
